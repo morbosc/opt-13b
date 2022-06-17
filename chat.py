@@ -6,7 +6,7 @@ model = OPTForCausalLM.from_pretrained("/opt/13b/metaseq/projects/OPT/models/13b
 tokenizer = GPT2Tokenizer.from_pretrained("/opt/13b/metaseq/projects/OPT/models/13b")
 system('clear')
 prompt = "AI: I am an artificial intelligence.\nHuman: What do you do?\nAI: I will respond to your questions, answering them to the best of my ability.\nHuman: Excellent, what is the capitol of France?\nAI: The capitol of France is Paris."
-print(prompt)
+#print(prompt)
 new = ""
 while new.lower() != 'q' or 'quit':
   new = input("Human: ")
