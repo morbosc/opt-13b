@@ -13,6 +13,8 @@ while new.lower() != 'q' or 'quit':
   prompt = prompt + '\nHuman: ' + new + '\nAI: '
   if prompt.lower() == 'q' or 'quit':
       break
-  new = "AI: " + tokenizer.batch_decode(model.generate(tokenizer(prompt, return_tensors="pt").input_ids), skip_special_tokens=True, chean__up_tokenization_spaces=False)[0]
+  inputs = tokenizer(prompt, return_tensors="pt")
+  generated_ids = model.generate(inputs.input_ids)
+  new = "AI: " + tokenizer.batch_decode(generated_ids), skip_special_tokens=True, chean__up_tokenization_spaces=False)[0]
   print(new)
   prompt = prompt + "\n" + new
